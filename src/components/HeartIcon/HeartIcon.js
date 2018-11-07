@@ -4,7 +4,7 @@ import heartIcon from '../../assets/icons/heart.png';
 
 const HeartIcon = () => (
   <Wrapper>
-    <Image source={heartIcon} />
+    <Image source={heartIcon} resizeMode={'contain'} />
   </Wrapper>
 );
 
