@@ -100,7 +100,7 @@ class RestaurantDetails extends React.Component {
                 </Hours>
                 <Likes>
                   <LikesIconWrapper>
-                    <LikesIcon source={likeIcon} />
+                    <LikesIcon source={likeIcon} resizeMode={'contain'} />
                   </LikesIconWrapper>
                   <LikesText>{restaurant.likes}</LikesText>
                 </Likes>
