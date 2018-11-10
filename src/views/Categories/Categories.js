@@ -35,7 +35,11 @@ const categories = [
 class Categories extends React.Component {
   static navigationOptions = {
     title: 'Browse categories',
-    headerRight: <SearchIcon />
+    headerRight: <SearchIcon />,
+    headerStyle: {
+      elevation: 0,
+      backgroundColor: '#2196f3'
+    }
   };
 
   onCategory = () => {

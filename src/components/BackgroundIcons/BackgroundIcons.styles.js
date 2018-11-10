@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.View`
   position: absolute;
@@ -6,6 +6,15 @@ export const Wrapper = styled.View`
   right: 10px;
   top: 20px;
   bottom: 20px;
+
+  ${props =>
+    props.full &&
+    css`
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    `};
 `;
 
 export const Image = styled.Image`

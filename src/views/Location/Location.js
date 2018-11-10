@@ -31,7 +31,11 @@ const cities = [
 class Location extends React.Component {
   static navigationOptions = {
     title: 'Location',
-    tabBarVisible: false
+    tabBarVisible: false,
+    headerStyle: {
+      elevation: 0,
+      backgroundColor: '#2196f3'
+    }
   };
 
   onChoose = city => {

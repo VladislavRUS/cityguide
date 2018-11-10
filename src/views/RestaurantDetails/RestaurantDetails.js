@@ -58,7 +58,11 @@ class RestaurantDetails extends React.Component {
 
     return {
       title,
-      headerRight: <HeartIcon />
+      headerRight: <HeartIcon />,
+      headerStyle: {
+        elevation: 0,
+        backgroundColor: '#2196f3'
+      }
     };
   };
 

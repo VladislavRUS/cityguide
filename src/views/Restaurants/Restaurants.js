@@ -8,7 +8,11 @@ import { RESTAURANT_DETAILS } from '../../constants/routes';
 class Restaurants extends React.Component {
   static navigationOptions = {
     title: 'Browse restaurants',
-    headerRight: <SearchIcon />
+    headerRight: <SearchIcon />,
+    headerStyle: {
+      elevation: 0,
+      backgroundColor: '#2196f3'
+    }
   };
 
   onRestaurant = restaurant => {
