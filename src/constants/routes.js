@@ -1,6 +1,7 @@
 // Stacks
 export const AUTH_STACK = 'AuthStack';
 export const BROWSE_STACK = 'BrowseStack';
+export const LOCATION_STACK = 'LocationStack';
 export const MAIN_STACK = 'MainStack';
 
 // Screens

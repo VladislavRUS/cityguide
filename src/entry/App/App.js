@@ -15,6 +15,7 @@ import TabIcon from '../../components/TabIcon/TabIcon';
 import * as icons from '../../assets/icons';
 import Restaurants from '../../views/Restaurants';
 import RestaurantDetails from '../../views/RestaurantDetails';
+import Favorites from '../../views/Favorites';
 
 const headerStyles = {
   headerStyle: {
@@ -107,14 +108,37 @@ ProfileStack.navigationOptions = ({ navigation }) => ({
   )
 });
 
+const FavoritesStack = createStackNavigator(
+  {
+    Favorites
+  },
+  {
+    navigationOptions: {
+      ...headerStyles
+    }
+  }
+);
+
+FavoritesStack.navigationOptions = ({ navigation }) => ({
+  title: 'Favorites',
+  tabBarIcon: () => (
+    <TabIcon
+      focused={navigation.isFocused()}
+      activeIcon={icons.favoritesInactive}
+      inactiveIcon={icons.favoritesInactive}
+    />
+  )
+});
+
 const MainStack = createBottomTabNavigator(
   {
     LocationStack,
     BrowseStack,
+    FavoritesStack,
     ProfileStack
   },
   {
-    initialRouteName: Routes.BROWSE_STACK,
+    initialRouteName: Routes.LOCATION_STACK,
     tabBarOptions: {
       style: {
         height: 72,
@@ -138,7 +162,7 @@ const createNavigator = () =>
       MainStack
     },
     {
-      initialRouteName: Routes.MAIN_STACK
+      initialRouteName: Routes.AUTH_STACK
     }
   );
 

@@ -3,6 +3,7 @@ import browseActive from './browse_active.png';
 import browseInactive from './browse_inactive.png';
 import profileInactive from './profile_inactive.png';
 import profileActive from './profile_active.png';
+import favoritesInactive from './favorites_inactive.png';
 
 import restaurants from './restaurants.png';
 import hotels from './hotels.png';
@@ -17,6 +18,7 @@ export {
   browseInactive,
   profileInactive,
   profileActive,
+  favoritesInactive,
   restaurants,
   hotels,
   nightlife,
