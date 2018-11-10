@@ -10,6 +10,7 @@ import Splash from '../../views/Splash';
 import Login from '../../views/Login';
 import Location from '../../views/Location';
 import Categories from '../../views/Categories';
+import Profile from '../../views/Profile';
 import TabIcon from '../../components/TabIcon/TabIcon';
 import * as icons from '../../assets/icons';
 import Restaurants from '../../views/Restaurants';
@@ -47,17 +48,17 @@ const LocationStack = createStackNavigator(
   }
 );
 
-LocationStack.navigationOptions = {
+LocationStack.navigationOptions = ({ navigation }) => ({
   title: 'Location',
   tabBarVisible: false,
-  tabBarIcon: focused => (
+  tabBarIcon: () => (
     <TabIcon
-      focused={focused}
+      focused={navigation.isFocused()}
       activeIcon={icons.locationInactive}
       inactiveIcon={icons.locationInactive}
     />
   )
-};
+});
 
 const BrowseStack = createStackNavigator(
   {
@@ -73,21 +74,44 @@ const BrowseStack = createStackNavigator(
   }
 );
 
-BrowseStack.navigationOptions = {
+BrowseStack.navigationOptions = ({ navigation }) => ({
   title: 'Browse',
-  tabBarIcon: focused => (
+  tabBarIcon: () => (
     <TabIcon
-      focused={focused}
+      focused={navigation.isFocused()}
       activeIcon={icons.browseActive}
       inactiveIcon={icons.browseInactive}
     />
   )
-};
+});
+
+const ProfileStack = createStackNavigator(
+  {
+    Profile
+  },
+  {
+    navigationOptions: {
+      ...headerStyles
+    }
+  }
+);
+
+ProfileStack.navigationOptions = ({ navigation }) => ({
+  title: 'Profile',
+  tabBarIcon: () => (
+    <TabIcon
+      focused={navigation.isFocused()}
+      activeIcon={icons.profileActive}
+      inactiveIcon={icons.profileInactive}
+    />
+  )
+});
 
 const MainStack = createBottomTabNavigator(
   {
     LocationStack,
-    BrowseStack
+    BrowseStack,
+    ProfileStack
   },
   {
     initialRouteName: Routes.BROWSE_STACK,

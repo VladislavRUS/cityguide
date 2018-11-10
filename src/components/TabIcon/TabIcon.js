@@ -1,10 +1,11 @@
 import React from 'react';
-import { Wrapper, Image } from './TabIcon.styles';
+import { Image } from './TabIcon.styles';
 
 const TabIcon = props => (
-  <Wrapper>
-    <Image source={props.focused ? props.activeIcon : props.inactiveIcon} />
-  </Wrapper>
+  <Image
+    source={props.focused ? props.activeIcon : props.inactiveIcon}
+    resizeMode={'contain'}
+  />
 );
 
 export default TabIcon;

@@ -6,8 +6,6 @@ import newYork from '../../assets/images/newYork.png';
 import london from '../../assets/images/london.png';
 import paris from '../../assets/images/paris.png';
 import { BROWSE_STACK } from '../../constants/routes';
-import TabIcon from '../../components/TabIcon/TabIcon';
-import * as icons from '../../assets/icons';
 
 const cities = [
   {
@@ -33,14 +31,7 @@ const cities = [
 class Location extends React.Component {
   static navigationOptions = {
     title: 'Location',
-    tabBarVisible: false,
-    tabBarIcon: focused => (
-      <TabIcon
-        focused={focused}
-        activeIcon={icons.browseActive}
-        inactiveIcon={icons.browseInactive}
-      />
-    )
+    tabBarVisible: false
   };
 
   onChoose = city => {
